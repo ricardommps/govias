@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Govias</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let item of itens">
+      <ion-avatar item-start>
+        <div class="squareTop ng-binding">{{item.abbreviation}}</div>
+      </ion-avatar>
+      <p>Fiscalização da </p>
+      <h2>{{item.title}}</h2>
+      <button ion-button outline item-end>
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
+<!--<div class="squareTop ng-binding">C</div>-->

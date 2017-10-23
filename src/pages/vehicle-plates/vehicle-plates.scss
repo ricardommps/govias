@@ -1,0 +1,42 @@
+page-vehicle-plates {
+  .contentPage{
+    background-color: #f2f2f2;
+  }
+
+  .btn-round {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  .btn-round.btn-lg {
+    width: 48px;
+    height: 48px;
+  }
+
+  .btn-round.btn-sm {
+    width: 34px;
+    height: 34px;
+  }
+
+  .btn-round.btn-xs {
+    width: 24px;
+    height: 24px;
+  }
+
+  ion-fab[cam] {
+    right: 80%;
+  }
+
+  ion-fab[mic] {
+    right: 55%;
+  }
+  ion-input {
+    background-color: white;
+    padding-left: 10px;
+    color: #6c6c6c;
+    font-size: 20px;
+    text-align: center;
+  }
+
+}

@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Placas de veículos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content scroll="false" class="contentPage">
+  <div class="selection">
+    <ion-card>
+      <ion-fab cam middle>
+        <button ion-fab (click)="takePicture()">
+          <ion-icon name="camera"></ion-icon>
+        </button>
+      </ion-fab>
+      <ion-fab mic middle>
+        <button ion-fab>
+          <ion-icon name="mic"></ion-icon>
+        </button>
+      </ion-fab>
+
+      <ion-fab middle right *ngIf="showButton">
+        <button ion-fab (click)="direction()">
+          <ion-icon name="pin"></ion-icon>
+        </button>
+      </ion-fab>
+
+      <!--<img src="http://autos.culturamix.com/blog/wp-content/gallery/como-verificar-a-procedencia-do-carro-atraves-da-placa/Verificar-a-Procedencia-Do-Carro-Pela-Placa-13.jpg"/>-->
+      <ion-card-content style="height: 200px;" text-center="" *ngIf="!base64Image">
+        <div>
+          <h1 style="padding: 35px 10px 10px 10px;">Para exibir dados do veículo, fotografe, fale ou digite aplaca.</h1>
+        </div>
+      </ion-card-content>
+      <ion-card-content *ngIf="base64Image" style="padding: 0px;">
+        <div>
+          <img [src]="base64Image" style="width: 150px;"/>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div style="padding: 75px 15px 15px 15px;">
+    <ion-input type="text"
+               text-center
+               placeholder="XXX-0000"
+               maxlength="8"
+               [(ngModel)]='placa'
+               (ngModelChange)="placa = $event.toLocaleUpperCase()"
+               (input)="onInput()"></ion-input>
+  </div>
+  <div style="padding: 15px 15px 15px 15px;">
+    <h1 text-center>{{status}}</h1>
+  </div>
+
+
+
+</ion-content>
